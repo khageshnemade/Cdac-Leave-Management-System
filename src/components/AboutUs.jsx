@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutusStyle.css";
+import "./css/AboutusStyle.css";
 import Bottom1 from "./Bottom";
 import Footer1 from "./Footer";
 import NewNavbar from "./Navbar";
@@ -43,7 +43,7 @@ function Aboutus() {
               <div className="col-6 col-sm-4">
                 <div className="card">
                   <img
-                    src={require("./KHAGESH NEMADE.jpg")}
+                    src={require("../components/img/KHAGESH NEMADE.jpg")}
                     alt="Jane"
                     style={{ width: "100%" }}
                   />
@@ -67,7 +67,7 @@ function Aboutus() {
               <div className="col-6 col-sm-4">
                 <div className="card">
                   <img
-                    src={require("./jaswant.jpg")}
+                    src={require("../components/img/jaswant.jpg")}
                     alt="Mike"
                     style={{ width: "100%", height: "20%" }}
                   />
@@ -91,7 +91,7 @@ function Aboutus() {
               <div className="col-6 col-sm-4">
                 <div className="card">
                   <img
-                    src={require("./rohit.jpg")}
+                    src={require("../components/img/rohit.jpg")}
                     alt="John"
                     style={{ width: "100%", height: "20%" }}
                   />

@@ -1,39 +1,36 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import AboutUS from "./AboutUs";
+import AboutUS from "./components/AboutUs";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 
-import NewNavbar from "./Navbar";
+import NewNavbar from "./components/Navbar";
 
-import Contact from "./ContactUs";
+import Contact from "./components/ContactUs";
 
-import Home from "./Homepage";
-import CandidateLogin from "./CandidateLogin";
-import FacultyLogin from "./FacultyLogin";
-import CandidateForgotPassword from "./CandidateForgotPassword";
-import FacultyForgetPass from "./FacultyForgetPass";
+import Home from "./components/Homepage";
+import CandidateLogin from "./components/CandidateLogin";
+import FacultyLogin from "./components/FacultyLogin";
+import CandidateForgotPassword from "./components/CandidateForgotPassword";
+import FacultyForgetPass from "./components/FacultyForgetPass";
 
-import StudentRegistration1 from "./demo";
-import Facultyreg from "./demo1";
+import StudentRegistration1 from "./components/StudentRegistration1";
+import Facultyreg from "./components/Facultyreg";
 
-import MyTodo from "./demo4";
-import MyTodoList from "./demo5";
-import InNavbar from "./InNavbar";
-import MyUserList from "./UserList";
-import InNavbar2 from "./InNavbar2";
-import Applicationlist from "./ApplicationList";
+import MyTodo from "./components/AddLeave";
+import MyTodoList from "./components/GetAleaves";
+import InNavbar from "./components/InNavbar";
+import MyUserList from "./components/UserList";
+import InNavbar2 from "./components/InNavbar2";
+import Applicationlist from "./components/ApplicationList";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-       
         <Routes>
-        
-
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
 

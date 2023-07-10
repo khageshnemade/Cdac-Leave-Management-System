@@ -1,9 +1,5 @@
-
 import Bottom1 from "./Bottom";
-import "./ContactCss.css";
-
-
-
+import "./css/ContactCss.css";
 
 import React, { useState } from "react";
 import Footer1 from "./Footer";
@@ -15,7 +11,7 @@ const Contact = () => {
     email: "",
     phone: "",
     location: "",
-    message: ""
+    message: "",
   });
 
   const [validationErrors, setValidationErrors] = useState({
@@ -23,7 +19,7 @@ const Contact = () => {
     email: "",
     phone: "",
     location: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -70,7 +66,7 @@ const Contact = () => {
         email: "",
         phone: "",
         location: "",
-        message: ""
+        message: "",
       });
       // Reset validation errors
       setValidationErrors({});
@@ -85,46 +81,49 @@ const Contact = () => {
 
   return (
     <>
-    <NewNavbar />
-    <div>
-    <div className="contact2" style={{ backgroundImage: "url('https://www.cdac.in/img/hpc.png')" }} id="contact">
-    <h1 style={{color:"orange",fontSize:70}}>Contact Us</h1>
-   
-      <div className="spinner-grow text-primary" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-secondary" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-success" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-danger" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-warning" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-info" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-light" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-      <div className="spinner-grow text-dark" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-    
-        
-      <div className="container">
-        <div className="row contact-container">
-          <div className="col-lg-12">
-            <div className="card card-shadow border-0 mb-4">
-              <div className="row">
-                <div className="col-lg-8">
-                  <div className="contact-box p-4">
-                    <h4 className="title">Contact Us</h4>
-                    <form onSubmit={handleSubmit}>
+      <NewNavbar />
+      <div>
+        <div
+          className="contact2"
+          style={{ backgroundImage: "url('https://www.cdac.in/img/hpc.png')" }}
+          id="contact"
+        >
+          <h1 style={{ color: "orange", fontSize: 70 }}>Contact Us</h1>
+
+          <div className="spinner-grow text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-secondary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-success" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-danger" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-warning" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-info" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-light" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow text-dark" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+
+          <div className="container">
+            <div className="row contact-container">
+              <div className="col-lg-12">
+                <div className="card card-shadow border-0 mb-4">
+                  <div className="row">
+                    <div className="col-lg-8">
+                      <div className="contact-box p-4">
+                        <h4 className="title">Contact Us</h4>
+                        {/*<form onSubmit={handleSubmit}>
                       <div className="row">
                         <div className="col-lg-6">
                           <div className="form-group mt-3">
@@ -197,21 +196,52 @@ const Contact = () => {
                           </button>
                         </div>
                       </div>
-                    </form>
-                  </div>
-                </div>
-                <div className="col-lg-4 bg-image" style={{ backgroundImage: "url('https://www.cdac.in/img/int-banner2.jpg')" }}>
-                  <div className="detail-box p-4">
-                    <h5 className="text-white font-weight-light mb-3">ADDRESS</h5>
-                    <p className="text-white op-7">Center For Devlopment of Advance Computing 
-                      <br /> C-DAC Innovation Park</p>
-                    <h5 className="text-white font-weight-light mb-3 mt-4">CALL US</h5>
-                    <p className="text-white op-7">Phone: +91-20-25503100
-                      <br /> Fax: +91-20-25503100</p>
-                    <div className="round-social light">
-                      <a href="#" className="ml-0 text-decoration-none text-white border border-white rounded-circle"><i className="icon-social-facebook"></i></a>
-                      <a href="#" className="text-decoration-none text-white border border-white rounded-circle"><i className="icon-social-twitter"></i></a>
-                      <a href="#" className="text-decoration-none text-white border border-white rounded-circle"><i className="icon-social-youtube"></i></a>
+  </form>*/}
+                      </div>
+                    </div>
+                    <div
+                      className="col-lg-12 bg-image"
+                      style={{
+                        backgroundImage:
+                          "url('https://www.cdac.in/img/int-banner2.jpg')",
+                      }}
+                    >
+                      <div className="detail-box p-4">
+                        <h5 className="text-white font-weight-light mb-3">
+                          ADDRESS
+                        </h5>
+                        <p className="text-white op-7">
+                          Center For Devlopment of Advance Computing
+                          <br /> C-DAC Innovation Park
+                        </p>
+                        <h5 className="text-white font-weight-light mb-3 mt-4">
+                          CALL US
+                        </h5>
+                        <p className="text-white op-7">
+                          Phone: +91-20-25503100
+                          <br /> Fax: +91-20-25503100
+                        </p>
+                        <div className="round-social light">
+                          <a
+                            href="#"
+                            className="ml-0 text-decoration-none text-white border border-white rounded-circle"
+                          >
+                            <i className="icon-social-facebook"></i>
+                          </a>
+                          <a
+                            href="#"
+                            className="text-decoration-none text-white border border-white rounded-circle"
+                          >
+                            <i className="icon-social-twitter"></i>
+                          </a>
+                          <a
+                            href="#"
+                            className="text-decoration-none text-white border border-white rounded-circle"
+                          >
+                            <i className="icon-social-youtube"></i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -219,12 +249,10 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <Footer1 />
+        <Bottom1 />
       </div>
-    </div>
-    <Footer1 />
-      <Bottom1/>
-    </div>
-   </> 
+    </>
   );
 };
 

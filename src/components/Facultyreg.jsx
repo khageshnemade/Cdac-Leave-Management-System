@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Registration.css";
-import img from "./edutrain.jpeg";
+import "./css/Registration.css";
+import img from "./img/edutrain.jpeg";
 import RegistrationInstructions from "./RegistrationInstructions";
 
 import Footer1 from "./Footer";
@@ -15,7 +15,7 @@ const Facultyreg = () => {
     confirmPassword: "",
     email: "",
     mobile: "",
-    empid: ""
+    empid: "",
   });
 
   let [errors, setErrors] = useState({
@@ -24,7 +24,7 @@ const Facultyreg = () => {
     confirmPasswordError: "",
     emailError: "",
     mobileError: "",
-    empidError: ""
+    empidError: "",
   });
 
   let handlerEmpidAction = (e) => {
@@ -71,7 +71,7 @@ const Facultyreg = () => {
       confirmPasswordError: "",
       emailError: "",
       mobileError: "",
-      empidError: ""
+      empidError: "",
     };
 
     if (user.username.trim() === "") {
@@ -128,13 +128,28 @@ const Facultyreg = () => {
     return isValid;
   };
   let [showPopup, setShowPopup] = useState(false);
+
   let registerAction = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       // BACKEND
-      let url = `http://localhost:4000/addfaculty?username=${user.username}&password=${user.password}&email=${user.email}&mobile=${user.mobile}&empid=${user.empid}`;
-      await fetch(url);
+      let url = "http://localhost:9091/add-faculty";
+      let data = {
+        username: user.username,
+        password: user.password,
+        email: user.email,
+        mobile: user.mobile,
+        empid: user.empid,
+      };
+
+      await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       let newuser = {
         username: "",
@@ -142,7 +157,7 @@ const Facultyreg = () => {
         confirmPassword: "",
         email: "",
         mobile: "",
-        empid: ""
+        empid: "",
       };
       setUser(newuser);
       setErrors({
@@ -151,7 +166,7 @@ const Facultyreg = () => {
         confirmPasswordError: "",
         emailError: "",
         mobileError: "",
-        empidError: ""
+        empidError: "",
       });
       alert("Registration successful!");
       setShowPopup(false);
@@ -190,10 +205,10 @@ const Facultyreg = () => {
 
   return (
     <>
-    <NewNavbar />
+      <NewNavbar />
       <div>
         <div className="portion shadow-lg container-fluid">
-          <h1 className="d-flex p-5 text-white">Student Registration Page</h1>
+          <h1 className="d-flex p-5 text-white">Faculty Registration Page</h1>
         </div>
 
         <div className="registration-page col-sm-12 col-md-8 shadow-lg p-3 bg-white rounded p-3 mb-4">
@@ -272,7 +287,7 @@ const Facultyreg = () => {
                     title="Please enter a 9-digit Employee Id"
                   />
                   <span className="form-text">
-                  Enter 9 digit Employee ID No. e.g. 987456321
+                    Enter 9 digit Employee ID No. e.g. 987456321
                   </span>
                   {errors.empidError && (
                     <div className="error">{errors.empidError}</div>

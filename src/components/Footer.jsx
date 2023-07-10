@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Carousel from "better-react-carousel";
-import "./style.css";
+import "./css/style.css";
 import { toBePartiallyChecked } from "@testing-library/jest-dom/matchers";
 function Footer1() {
     return (

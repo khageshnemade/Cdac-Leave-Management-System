@@ -1,9 +1,12 @@
-import React from 'react';
-
+import React from "react";
 
 const Carousel = () => {
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+    <div
+      id="carouselExampleIndicators"
+      className="carousel slide"
+      data-bs-ride="carousel"
+    >
       <div className="carousel-indicators">
         <button
           type="button"
@@ -28,45 +31,39 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner container-fluid">
         <div className="carousel-item active">
-        <img
-            src={require('./index-PhotoRoom.png')}
-            className="d-block w-100 img-fluid"
-            alt="..."
-           
-            />
-        <div className="char">
-          <p style={{ height:600 }}></p>
-        </div>
-        <div class="carousel-captions d-none d-md-block order-2">       
-         
-        </div>
-        </div>
-       
-        <div className="carousel-item">
           <img
-           src={require('./index1.jpg')}
+            src={require("../components/img/index2.jpg")}
             className="d-block w-100 img-fluid"
             alt="..."
-           
           />
           <div className="char">
-            <p style={{ height:600 }}></p>
+            <p style={{ height: 600 }}></p>
           </div>
-          
+          <div class="carousel-captions d-none d-md-block order-2"></div>
         </div>
+
         <div className="carousel-item">
           <img
-            src={require('./index2.jpg')}
+            src={require("../components/img/index1.png")}
             className="d-block w-100 img-fluid"
             alt="..."
           />
           <div className="char">
-            <p style={{ height:600 }}></p>
+            <p style={{ height: 600 }}></p>
+          </div>
+        </div>
+        <div className="carousel-item">
+          <img
+            src={require("../components/img/index-PhotoRoom.png")}
+            className="d-block w-100 img-fluid"
+            alt="..."
+          />
+          <div className="char">
+            <p style={{ height: 600 }}></p>
           </div>
         </div>
       </div>
-     
     </div>
   );
-}
+};
 export default Carousel;

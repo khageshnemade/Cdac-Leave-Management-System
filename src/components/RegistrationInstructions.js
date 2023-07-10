@@ -1,5 +1,5 @@
-import React from 'react';
-import "./Registration.css";
+import React from "react";
+import "./css/Registration.css";
 
 const RegistrationInstructions = () => {
   return (
@@ -14,8 +14,8 @@ const RegistrationInstructions = () => {
               Please use Firefox, Chrome, and Edge browsers on desktop only.
             </li>
             <li style={{ margin: "5px 0px 0px 0px" }}>
-              The Name should be the same as given in Degree Certificate /
-              Govt issued ID Card.
+              The Name should be the same as given in Degree Certificate / Govt
+              issued ID Card.
             </li>
             <li style={{ margin: "5px 0px 0px 0px" }}>
               Please verify email id as it will be used to send registration
