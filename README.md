@@ -1,56 +1,6 @@
-Table of Contents
-Sr.No.	Title	Page No.
-1	Abstract	2
-2	Introduction	3
-3	Overall Description	4
-4	System Features and Requirements	8
-5	System Interfaces	9
-6	Appendices	10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Abstract
 The project is the design and implementation of an interactive World Wide Web-based Leave Management System. The Leave Management System automates the process of managing and tracking multiple types of student leaves. Students are able to submit the leave form and students can view their leave existing records. Faculty can also view the student existing records. The Leave Management System maintains a database to keep a running balance of each Students records.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 1. Introduction
 
@@ -103,8 +53,6 @@ It has the following columns:
 •	student_prn (integer, foreign key references Student.prnnumber): This column establishes a one-to-many relationship with the Student table, indicating that a faculty member can be associated with multiple students based on their PRN.
 
 
- 
-
 2.3 Operating Environment
 The Leave Management System will be developed as a web application and will require a compatible web browser. The system will be hosted on a web server and will connect to a database server to store and retrieve data.
 
@@ -120,32 +68,6 @@ Clearly outline the steps involved in the registration process, breaking them do
 ● Step 2: Fill out the registration form with your basic information.
 ● Step 3: Choose a username and password.
 ● Step 4: Click the "Register"  button to complete the registration.
-
-
- 
-
-
-2.6 Clear Login Steps:
- Clearly outline the steps involved in the Login process, breaking them down into simple and sequential instructions. For example:
-● Step 1: After Registration Access the Login page.
-● Step 2: Fill out the Login form with your basic information.
-● Step 3: Fill appropriate email and password.
-● Step 4: Click the "Login" button.
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 3. System Features and Requirements
 3.1 Functional Requirements
@@ -178,30 +100,8 @@ The system will have a web-based user interface for Students to submit leave req
 4.2 Software Interfaces
 The system will integrate with the college faculty to manage existing students data. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 5. Appendices
 
 Include any additional information that may be relevant to the Leave Management System.
 This Software Requirements Specification (SRS) document provides a comprehensive outline of the Leave Management System's functionalities, constraints, and requirements. It serves as a reference for the development team to design, develop, and implement the system successfully.
-
-
-
-
-
-
-
-
 
