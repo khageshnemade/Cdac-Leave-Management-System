@@ -28,48 +28,6 @@ function FacultyLogin() {
     let newuser = { ...user, email: e.target.value };
     setUser(newuser);
   };
-  /*
- let loginAction = async () => {
-    try {
-      formRef.current.classList.add("was-validated");
-      let formStatus = formRef.current.checkValidity();
-      if (!formStatus) {
-        return;
-      }
-
-      // BACKEND :: ...
-      let url = `http://localhost:9091/login-faculty`;
-      let data = { email: user.email, password: user.password };
-
-      await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-
-       
-      });
-
-      if (res.status === 500) {
-        let errorMessage = await res.text();
-        throw new Error(errorMessage);
-      }
-
-      localStorage.setItem("loginStatusfac", "true");
-      navigate("/facnavbar", { replace: true });
-    } catch (err) {
-      alert(err.message);
-      setIsError(true);
-      setErrorFields(["password"]);
-    } finally {
-      setTimeout(() => {
-        setIsError(false);
-        setIsSuccess(false);
-        setErrorFields([]);
-      }, 5000);
-    }
-  };*/
 
   let loginAction = async () => {
     try {
@@ -79,9 +37,11 @@ function FacultyLogin() {
         return;
       }
 
-      // BACKEND :: ...
       let url = `http://localhost:9091/login-faculty`;
-      let data = { email: user.email, password: user.password };
+      let data = {
+        email: user.email,
+        password: user.password,
+      };
 
       let res = await fetch(url, {
         method: "POST",
@@ -91,13 +51,20 @@ function FacultyLogin() {
         body: JSON.stringify(data),
       });
 
-      if (res.status === 500) {
+      if (res.ok) {
+        let message = await res.text();
+        setIsSuccess(true);
+        alert(message);
+        if (message.includes("Welcome to Leave management")) {
+          localStorage.setItem("loginStatusfac", "true");
+          navigate("/facnavbar", { replace: true });
+        } else {
+          setIsError(true); // Set isError to true if the message does not indicate successful login
+        }
+      } else {
         let errorMessage = await res.text();
         throw new Error(errorMessage);
       }
-
-      localStorage.setItem("loginStatusfac", "true");
-      navigate("/facnavbar", { replace: true });
     } catch (err) {
       alert(err.message);
       setIsError(true);
@@ -110,7 +77,6 @@ function FacultyLogin() {
       }, 5000);
     }
   };
-
   return (
     <>
       <NewNavbar />
@@ -181,12 +147,16 @@ function FacultyLogin() {
                         onClick={loginAction}
                       />
                     </div>
-                    {isSuccess && (
+
+                    {isSuccess && !isError && (
                       <div className="alert alert-success">Success</div>
                     )}
                     {isError && (
-                      <div className="alert alert-danger">Login failed</div>
+                      <div className="alert alert-danger">
+                        Invalid credentials
+                      </div>
                     )}
+
                     <div style={{ paddingLeft: "70px" }}>
                       <div className="row justify-content-center mt-3">
                         <div className="col-12 col-md-5 mr-5 fs-5">

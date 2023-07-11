@@ -47,16 +47,7 @@ function Applicationlist() {
     }
   };
 
-  const updateStatusAction = async (item) => {
-    try {
-      const url = `http://localhost:4000/update-status?task=${item.task}`;
-      let res = await fetch(url);
-      alert("success");
-      getAllTodoAction();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //
 
   return (
     <>
@@ -90,12 +81,7 @@ function Applicationlist() {
                   Review
                 </button>
                 {item.status === "Pending" && (
-                  <button
-                    className="btn btn-success ms-2"
-                    onClick={() => updateStatusAction(item)}
-                  >
-                    Accept
-                  </button>
+                  <button className="btn btn-success ms-2">Accept</button>
                 )}
               </div>
             </div>

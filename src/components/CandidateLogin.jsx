@@ -36,24 +36,35 @@ function CandidateLogin() {
         return;
       }
 
-      // BACKEND :: ...
-      let url = `http://localhost:9091/login-student`;
-      let data = { email: user.email, password: user.password };
+      let url = "http://localhost:9091/login-student";
+      let data = {
+        email: user.email,
+        password: user.password,
+      };
+
       let res = await fetch(url, {
         method: "POST",
-        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify(data),
       });
 
-      if (res.status == 500) {
-        let erroMessage = await res.text();
-        throw new Error(erroMessage);
+      if (res.ok) {
+        let message = await res.text();
+        if (message.includes("Welcome to Leave management")) {
+          setIsSuccess(true);
+          alert(message);
+          localStorage.setItem("loginStatusfac", "true");
+          navigate("/facnavbar", { replace: true });
+        } else {
+          setIsError(true);
+          alert("Invalid credentials"); // Show invalid credentials message
+        }
+      } else {
+        let errorMessage = await res.text();
+        throw new Error(errorMessage);
       }
-
-      localStorage.setItem("loginStatuscan", "true");
-      navigate("/newnav", { replace: true });
     } catch (err) {
       alert(err.message);
       setIsError(true);
@@ -121,10 +132,15 @@ function CandidateLogin() {
                         onClick={loginAction}
                       />
                     </div>
+
                     {isSuccess && (
                       <div className="alert alert-success">Success</div>
                     )}
-                    {isError && <div className="alert alert-danger">Error</div>}
+                    {isError && (
+                      <div className="alert alert-danger">
+                        Invalid credentials
+                      </div>
+                    )}
                     <div style={{ paddingLeft: "70px" }}>
                       <div className="row justify-content-center mt-3">
                         <div className="col-12 col-md-5 mr-5 fs-5">
