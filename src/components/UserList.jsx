@@ -71,7 +71,7 @@ function MyUserList() {
                     <tr>
                       <th scope="row">{index + 1}</th>
                       <td className="text-capitalize">{item.username}</td>
-                      <td>*******</td>
+                      <td>*********</td>
                       <td>{item.email}</td>
                       <td>{item.mobile}</td>
                     </tr>
